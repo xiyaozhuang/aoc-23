@@ -1,0 +1,7 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "aoc23"
+version = "0.0.1"
+dependencies = ["pre-commit == 3.8.0", "pytest == 8.3.2"]
