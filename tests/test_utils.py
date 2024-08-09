@@ -4,7 +4,7 @@ from aoc23.utils import find_all, get_modules, get_solutions, load_data
 
 
 def test_load_data():
-    expected = {"hello": ["world"]}
+    expected = {"hello": ["world\n"]}
     output = load_data("data/dummy")
 
     assert expected == output
