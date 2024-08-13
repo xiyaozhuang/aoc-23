@@ -34,4 +34,29 @@ def part_1(data):
 
 
 def part_2(data):
-    return
+    total = 0
+
+    for string in data:
+        name, game = string.split(":")
+
+        subgames = game.split(";")
+        hands = [subgame.split(",") for subgame in subgames]
+
+        fewest = {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+        }
+
+        for hand in hands:
+            for cubes in hand:
+                cube = cubes.strip().split(" ")
+                n = int(cube[0])
+                colour = cube[1]
+
+                if n > fewest[colour]:
+                    fewest[colour] = n
+
+        total += fewest["red"] * fewest["green"] * fewest["blue"]
+
+    return total
